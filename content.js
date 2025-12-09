@@ -1,4 +1,4 @@
-// 暗号化
+// セキュアな暗号化ユーティリティ
 class SecureStorage {
     constructor() {
       this.encryptionKey = null;
