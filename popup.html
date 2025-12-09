@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 350px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    h1 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .stats {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 15px;
+      backdrop-filter: blur(10px);
+    }
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .stat-item:last-child {
+      border-bottom: none;
+    }
+    .stat-value {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: all 0.3s;
+      font-weight: 600;
+    }
+    .primary {
+      background: white;
+      color: #667eea;
+    }
+    .primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    .danger {
+      background: rgba(239, 68, 68, 0.9);
+      color: white;
+    }
+    .danger:hover {
+      background: rgba(220, 38, 38, 0.9);
+    }
+    .security-badge {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.2);
+      color: #10b981;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    <span>🔐</span>
+    Smart Form Autofill
+  </h1>
+  
+  <div class="stats">
+    <div class="stat-item">
+      <span>学習済みフィールド</span>
+      <span class="stat-value" id="fieldCount">-</span>
+    </div>
+    <div class="stat-item">
+      <span>保存済みサイト</span>
+      <span class="stat-value" id="siteCount">-</span>
+    </div>
+    <div class="stat-item">
+      <span>セキュリティ</span>
+      <span class="security-badge">AES-256暗号化</span>
+    </div>
+  </div>
+
+  <button class="primary" id="viewData">データを表示</button>
+  <button class="danger" id="clearData">全データを削除</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
